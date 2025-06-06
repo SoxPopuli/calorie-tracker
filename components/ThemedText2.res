@@ -60,12 +60,12 @@ let make = (
   ~lightColor: option<string>=?,
   ~darkColor: option<string>=?,
   ~type_: textTypes=#default,
-  ~children:React.element,
+  ~children: React.element,
 ) => {
   let color = useThemeColor({light: lightColor, dark: darkColor}, #text)
 
   let styleType = switch type_ {
-  | #link => styles["default"]
+  | #link => styles["link"]
   | #title => styles["title"]
   | #default => styles["default"]
   | #subtitle => styles["subtitle"]
@@ -74,5 +74,5 @@ let make = (
 
   let withStyles = %raw("(color, styleType, style) => [{color}, styleType, style]")
 
-  <Text style=withStyles(color, styleType, style) >children</Text>
+  <Text style={withStyles(color, styleType, style)}> children </Text>
 }
