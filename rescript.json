@@ -1,0 +1,40 @@
+{
+  "name": "your-project-name",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "app",
+      "subdirs": true
+    },
+    {
+      "dir": "components",
+      "subdirs": true
+    }
+  ],
+  "jsx": { "version": 4 },
+  "package-specs": [
+    {
+      "module": "esmodule",
+      "in-source": true
+    }
+  ],
+  "suffix": ".res.js",
+  "bs-dependencies": [
+    "@rescript/core",
+    "@rescript/react",
+    "rescript-react-native"
+  ],
+  "bsc-flags": [
+    "-open RescriptCore"
+  ],
+  "gentypeconfig": {
+    "module": "esmodule",
+    "moduleResolution": "node",
+    "generatedFileExtension": ".gen.tsx",
+    "debug": { "all": false, "basic": false }
+  }
+}
+
