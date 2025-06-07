@@ -1,4 +1,5 @@
 open ReactNative
+open Theme
 
 let styles = {
   open Style
@@ -28,23 +29,6 @@ let styles = {
     }),
   })
 }
-
-type themeColorProps = {
-  light?: option<string>,
-  dark?: option<string>,
-}
-
-type themeColorName = [
-  | #text
-  | #background
-  | #tint
-  | #icon
-  | #tabIconDefault
-  | #tabIconSelected
-]
-
-@module("@/hooks/useThemeColor")
-external useThemeColor: (themeColorProps, themeColorName) => string = "useThemeColor"
 
 type textTypes = [
   | #default

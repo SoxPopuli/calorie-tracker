@@ -6,6 +6,7 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { make as Hello } from "@/components/Hello.gen";
+import { make as ThemedView2 } from "@/components/ThemedView2.res"
 
 export default function HomeScreen() {
   return (
@@ -18,10 +19,10 @@ export default function HomeScreen() {
         />
       }
     >
-      <ThemedView style={styles.titleContainer}>
+      <ThemedView2 style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
-      </ThemedView>
+      </ThemedView2>
       <Hello content="'ello" />
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
