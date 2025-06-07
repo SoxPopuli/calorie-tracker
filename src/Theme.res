@@ -1,6 +1,6 @@
 type themeColorProps = {
-  light?: option<string>,
-  dark?: option<string>,
+  light?: string,
+  dark?: string,
 }
 
 type themeColorName = [

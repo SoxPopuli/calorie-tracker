@@ -46,7 +46,7 @@ let make = (
   ~type_: textTypes=#default,
   ~children: React.element,
 ) => {
-  let color = useThemeColor({light: lightColor, dark: darkColor}, #text)
+  let color = useThemeColor({light: ?lightColor, dark: ?darkColor}, #text)
 
   let styleType = switch type_ {
   | #link => styles["link"]
