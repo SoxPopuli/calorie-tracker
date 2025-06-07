@@ -8,6 +8,7 @@ import { ThemedView } from "@/components/ThemedView";
 import { make as Hello } from "@/components/Hello.gen";
 import { make as ThemedView2 } from "@/components/ThemedView2.res"
 
+export default function HomeScreen() {
 
   return (
     <ParallaxScrollView
