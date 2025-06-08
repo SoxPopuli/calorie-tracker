@@ -40,5 +40,6 @@ yarn-error.*
 
 *.gen.tsx
 *.res.js
+*.res.mjs
 
 app-example

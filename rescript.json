@@ -12,6 +12,11 @@
     {
       "dir": "components",
       "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "subdirs": true,
+      "type": "dev"
     }
   ],
   "jsx": { "version": 4 },
@@ -21,11 +26,12 @@
       "in-source": true
     }
   ],
-  "suffix": ".res.js",
+  "suffix": ".res.mjs",
   "bs-dependencies": [
     "@rescript/core",
     "@rescript/react",
-    "rescript-react-native"
+    "rescript-react-native",
+    "@glennsl/rescript-jest"
   ],
   "bsc-flags": [
     "-open RescriptCore"
