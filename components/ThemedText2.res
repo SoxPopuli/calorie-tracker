@@ -1,5 +1,6 @@
 open ReactNative
 open Theme
+open Utils
 
 let styles = {
   open Style
@@ -38,6 +39,13 @@ type textTypes = [
   | #link
 ]
 
+type textProps = {
+  style?: Style.t,
+  children: React.element,
+}
+@module("react-native")
+external textMake: React.component<textProps> = "Text"
+
 @react.component
 let make = (
   ~style: option<ReactNative.Style.t>=?,
@@ -46,7 +54,8 @@ let make = (
   ~type_: textTypes=#default,
   ~children: React.element,
 ) => {
-  let color = useThemeColor({light: ?lightColor, dark: ?darkColor}, #text)
+  let color =
+    useThemeColor({light: ?lightColor, dark: ?darkColor}, #text)->(c => Style.s({color: c}))
 
   let styleType = switch type_ {
   | #link => styles["link"]
@@ -56,7 +65,16 @@ let make = (
   | #defaultSemiBold => styles["defaultSemiBold"]
   }
 
-  let withStyles = %raw("(color, styleType, style) => [{color}, styleType, style]")
+  let style = [
+    color,
+    styleType,
+    style->Option.getUnsafe
+  ]->Style.array
 
-  <Text style={withStyles(color, styleType, style)}> children </Text>
+  let props: Text.props = {
+    style: ?someOption(style),
+    children: ?someOption(children),
+  }
+
+  React.createElement(ReactNative.Text.make, props)
 }

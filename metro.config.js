@@ -16,6 +16,4 @@ config.server.enhanceMiddleware = (middleware) => {
   };
 };
  
-
-
 module.exports = config;

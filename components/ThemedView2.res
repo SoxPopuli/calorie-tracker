@@ -1,5 +1,6 @@
 open ReactNative
 open Theme
+open Utils
 
 @react.component
 let make = (~lightColor, ~darkColor, ~style: ReactNative.Style.t, ~children: React.element) => {
@@ -9,8 +10,14 @@ let make = (~lightColor, ~darkColor, ~style: ReactNative.Style.t, ~children: Rea
       dark: darkColor,
     },
     #background,
-  )
+  )->(c => Style.s({color: c}))
 
-  let withStyle = %raw("(color, style) => [{color}, style]")
-  <View style={withStyle(color, style)}> children </View>
+  let style = [color, style]->Style.array
+
+  let props: View.props = {
+    style: ?someOption(style),
+    children: ?someOption(children),
+  }
+
+  React.createElement(View.make, props)
 }

@@ -6,7 +6,7 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { make as Hello } from "@/components/Hello.gen";
-import { make as ThemedView2 } from "@/components/ThemedView2.res"
+import { make as ThemedView2 } from "@/components/ThemedView2.res.mjs"
 
 export default function HomeScreen() {
 

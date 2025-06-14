@@ -9,7 +9,7 @@ module S = {
 
 @genType @react.component
 let make = (~content=S.Other("hi")) => {
-  <ThemedText2 darkColor="chartreuse" type_={#link}>
+  <ThemedText2 darkColor="chartreuse" type_={#default}>
     {content->S.toString->React.string}
   </ThemedText2>
 }
