@@ -22,11 +22,11 @@
   "jsx": { "version": 4 },
   "package-specs": [
     {
-      "module": "esmodule",
+      "module": "commonjs",
       "in-source": true
     }
   ],
-  "suffix": ".res.mjs",
+  "suffix": ".res.cjs",
   "bs-dependencies": [
     "@rescript/core",
     "@rescript/react",

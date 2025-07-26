@@ -107,8 +107,3 @@ type t = {
 let t1 = {
   db: module(Sqlite)
 }
-
-let x = {
-  let module(D) = t1.db
-  D.getTwo("")
-}
