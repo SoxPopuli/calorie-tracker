@@ -14,7 +14,7 @@
       "subdirs": true
     },
     {
-      "dir": "__tests__",
+      "dir": "tests",
       "subdirs": true,
       "type": "dev"
     }
@@ -22,16 +22,16 @@
   "jsx": { "version": 4 },
   "package-specs": [
     {
-      "module": "commonjs",
+      "module": "esmodule",
       "in-source": true
     }
   ],
-  "suffix": ".res.cjs",
+  "suffix": ".res.mjs",
   "bs-dependencies": [
     "@rescript/core",
     "@rescript/react",
     "rescript-react-native",
-    "@glennsl/rescript-jest"
+    "rescript-vitest"
   ],
   "bsc-flags": [
     "-open RescriptCore"
